@@ -33,3 +33,25 @@ pipeline:
                   spec:
                     shell: Sh
                     command: echo "Welcome to "Harness
+    - stage:
+        name: clone code
+        identifier: clone_code
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Just checking the pipeling
+                  identifier: Just_checking_the_pipeling
+                  spec:
+                    shell: Sh
+                    command: echo "checking the pipeline message"
